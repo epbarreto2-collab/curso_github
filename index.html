@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predicciones UFC</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#111;
+    color:white;
+    margin:0;
+}
+
+header{
+    background:#d20a0a;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:#222;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+}
+
+h2{
+    color:#ff3c3c;
+}
+
+.fight{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px 0;
+    padding:10px;
+    border-bottom:1px solid #444;
+}
+
+select{
+    padding:8px;
+    border-radius:5px;
+}
+
+button{
+    background:#d20a0a;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#ff3c3c;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th, table td{
+    border:1px solid #444;
+    padding:10px;
+    text-align:center;
+}
+
+table th{
+    background:#d20a0a;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🥊 UFC Fight Predictions</h1>
+    <p>Realiza tus predicciones para los próximos combates</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Cartelera Principal</h2>
+
+        <div class="fight">
+            <span>Jon Jones</span>
+            <select id="fight1">
+                <option>Selecciona ganador</option>
+                <option>Jon Jones</option>
+                <option>Tom Aspinall</option>
+            </select>
+            <span>Tom Aspinall</span>
+        </div>
+
+        <div class="fight">
+            <span>Islam Makhachev</span>
+            <select id="fight2">
+                <option>Selecciona ganador</option>
+                <option>Islam Makhachev</option>
+                <option>Charles Oliveira</option>
+            </select>
+            <span>Charles Oliveira</span>
+        </div>
+
+        <div class="fight">
+            <span>Alex Pereira</span>
+            <select id="fight3">
+                <option>Selecciona ganador</option>
+                <option>Alex Pereira</option>
+                <option>Jamahal Hill</option>
+            </select>
+            <span>Jamahal Hill</span>
+        </div>
+
+        <button onclick="guardarPredicciones()">
+            Enviar Predicciones
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>Ranking de Usuarios</h2>
+
+        <table>
+            <tr>
+                <th>Posición</th>
+                <th>Usuario</th>
+                <th>Puntos</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Edwin</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Carlos</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>María</td>
+                <td>18</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<script>
+function guardarPredicciones(){
+    let p1 = document.getElementById("fight1").value;
+    let p2 = document.getElementById("fight2").value;
+    let p3 = document.getElementById("fight3").value;
+
+    alert(
+        "Tus predicciones fueron registradas:\n\n" +
+        "Pelea 1: " + p1 + "\n" +
+        "Pelea 2: " + p2 + "\n" +
+        "Pelea 3: " + p3
+    );
+}
+</script>
+
+</body>
+</html>
